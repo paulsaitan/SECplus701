@@ -1,7 +1,7 @@
 TASK1: COLLAPSED BACKBONE: BASIC LAYER3 CONFIGURATION.
 !@@@CORE SWITCH SA TAAS
 config t
-   hostname COREtaas-~~
+   hostname COREtaas-82
    enable secret pass
    service password-encryption
    no logging console
@@ -16,26 +16,26 @@ config t
       exec-timeout 0 0
    Int Vlan 1
      no shutdown
-	 ip add 10.~~.1.2 255.255.255.0
+	 ip add 10.82.1.2 255.255.255.0
 	 description MGMTDATA
    Int Vlan 10
      no shutdown
-	 ip add 10.~~.10.2 255.255.255.0
+	 ip add 10.82.10.2 255.255.255.0
 	 description WIRELESS
    Int Vlan 50
      no shutdown
-	 ip add 10.~~.50.2 255.255.255.0
+	 ip add 10.82.50.2 255.255.255.0
 	 description IPCCTV
    Int Vlan 100
      no shutdown
-	 ip add 10.~~.100.2 255.255.255.0
+	 ip add 10.82.100.2 255.255.255.0
 	 description VOICEVLAN
 end
 
 !!!DAPAT 7 UNDER~~SCORE ANG NA EDIT MO  ( LINE 34 to 68 PASTE TO COREBABA SWITCH )
 !@@@LeafSwitchONLY
 config t
-   hostname COREbaba-~~
+   hostname COREbaba-82
    enable secret pass
    service password-encryption
    no logging console
@@ -51,29 +51,29 @@ config t
    Int Gi 0/1
      no shutdown
 	  no switchport
-	  ip add 10.~~.~~.4 255.255.255.0
+	  ip add 10.82.82.4 255.255.255.0
    Int Vlan 1
      no shutdown
-	 ip add 10.~~.1.4 255.255.255.0
+	 ip add 10.82.1.4 255.255.255.0
 	 description MGMTDATA
    Int Vlan 10
      no shutdown
-	 ip add 10.~~.10.4 255.255.255.0
+	 ip add 10.82.10.4 255.255.255.0
 	 description WIRELESS
    Int Vlan 50
      no shutdown
-	 ip add 10.~~.50.4 255.255.255.0
+	 ip add 10.82.50.4 255.255.255.0
 	 description IPCCTV
    Int Vlan 100
      no shutdown
-	 ip add 10.~~.100.4 255.255.255.0
+	 ip add 10.82.100.4 255.255.255.0
 	 description VOICEVLAN
 end
 
 Securing Switches using AAA: authentication, authorization, accounting.
 config t
 username admin privilege 15 secret pass
-username namemo privilege 15 secret pass
+username adrian privilege 15 secret pass
 line vty 0 14
 login local
 end
